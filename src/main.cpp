@@ -10,6 +10,10 @@
 #include <stdio.h>
 #include <time.h>
 
+#include "vector.h"
+#include "vertex.h"
+#include "ray.h"
+
 using namespace std;
 
 struct RGBType{
@@ -99,11 +103,11 @@ int main(int argc, char *argv[]){
         for(int y = 0; y < image_height; y++){
             thisone = y *image_width + x;
 
-            
+
         }
     }
 
-    savebmp("scene.bmp", image_width, image_height, dpi, pixels);
+    savebmp("out/scene.bmp", image_width, image_height, dpi, pixels);
 
     return 0;
 }
