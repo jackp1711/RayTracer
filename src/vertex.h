@@ -1,10 +1,9 @@
 #pragma once
 
 class Vertex{
-    float x, y, z, w;
+    public:    
+        float x, y, z, w;
 
-
-    public:
         Vertex();
 
         Vertex(float, float, float);

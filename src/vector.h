@@ -2,11 +2,9 @@
 #pragma once
 
 class Vector{
-
-    float x, y ,z;
-
+    
     public:
-
+    float x, y ,z;
     Vector();
 
     Vector(float, float, float);
