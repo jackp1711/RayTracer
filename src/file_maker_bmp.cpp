@@ -6,7 +6,7 @@
 #include "colour.h"
 #include "file_maker_bmp.h"
 
-void File_Maker_BMP::savebmp(const char *filename, int w, int h, int dpi, std::vector<Colour> &data){
+void File_Maker_BMP::savebmp(const char *filename, int w, int h, int dpi, Colour *data){
     FILE *f;
     int k = w * h;
     int s = 4*k;
@@ -56,7 +56,7 @@ void File_Maker_BMP::savebmp(const char *filename, int w, int h, int dpi, std::v
     fwrite(bmpinfoheader, 1, 40, f);
 
     for(int i = 0; i < k; i++){
-        Colour rgb = data.at(i);
+        Colour rgb = data[i];
 
         double red = (rgb.r)*255;
         double green = (rgb.g)*255;

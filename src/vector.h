@@ -17,7 +17,11 @@ class Vector{
     void normalize();
     void negate();
     float dot(Vector&);
-    void cross(Vector&, Vector&);
+    Vector cross(Vector&);
+
+    Vector add(Vector&);
+    Vector vector_multiply(Vector&);
+    Vector scalar_multiply(float);
 
 };
 
@@ -52,9 +56,27 @@ void Vector::negate()
     z = -z;
 }
 
-void Vector::cross(Vector &other, Vector &result)
+Vector Vector::cross(Vector &other)
 {
+    Vector result;
     result.x = y*other.z - z*other.y;
     result.y = z*other.x - x*other.z;
     result.z = x*other.y - y*other.x;
+
+    return result;
+}
+
+Vector Vector::add(Vector &other)
+{
+    return Vector(x + other.x, y +other.y, z + other.z);
+}
+
+Vector Vector::vector_multiply(Vector &other)
+{
+    return Vector(x * other.x, y* other.y, z*other.z);
+}
+
+Vector Vector::scalar_multiply(float scale)
+{
+    return Vector(x *scale, y * scale, z * scale);
 }

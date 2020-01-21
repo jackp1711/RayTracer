@@ -8,5 +8,5 @@ class File_Maker_BMP{
 
     File_Maker_BMP(){}
 
-    void savebmp(const char *, int, int, int, std::vector<Colour>&);
+    void savebmp(const char *, int, int, int, Colour*);
 };
